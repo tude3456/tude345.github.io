@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="paket.html">Paket</a>
+        <a href="galery.html">Galery</a>
+        <a href="profil.html">Profil</a>
+        <a href="contact.html">Social Media</a>
+      </div>
+      <div id="main">
+        <span style="font-size:20px;cursor:pointer;color:#3bc5fb;" onclick="openNav()">&#9776; Tourkebali</span>
+        <button class="singup" onclick="document.getElementById('id02').style.display='block'" style="width:auto; margin-left: 8px; font-size: 10px; float:right ; margin-top: -6px; border-radius: 6px; background-color: #ff7b00;">Sign Up</button>
+        <button calss="login" onclick="document.getElementById('id01').style.display='block'" style="width:auto; float: right; font-size: 10px; margin-top: -6px; background-color: #05bbbb; border-radius: 6px;">Login</button>
+      </div>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+          document.body.style.backgroundColor = "white";
+        }
+        </script>
+
+   <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="img/slide1.png" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="img/slide2.png" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="img/slide3.png" style="width:100%">
+    </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+
+    <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); 
+    }
+    </script>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post" style="width: 400px;">
+    <div class="imgcontainer">
+      <h1 align="center" style="margin-bottom: 5px; color: aquamarine;">Login</h1>
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img/userlogin.JPG" alt="Avatar" class="avatar" height="150px" width="200px">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <div class="aksi" style="margin-top: 20px;">
+        <button type="submit" style="width: 80px; padding: 10px; margin-left: 10px; background-color: #05bbbb;">Login</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="margin-left: 10px; background-color: #ff5e00;">Cancel</button>
+    </div>
+    </div>
+  </form>
+</div>
+
+<script>
+var modal = document.getElementById('id01');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php" style="width: 400px;"> 
+    <div class="container" >
+      <h1 align="center" style="color:rgb(70, 219, 219);">Sign Up</h1>
+      <center><img src="img/Signup.JPG" alt="Avatar" class="avatar" height="150px" width="300px"></center>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Ulangi Password</b></label>
+      <input type="password" placeholder="Ulangi Password" name="psw-repeat" required>
+    
+
+      <div class="clearfix" style="margin-top: 10px;">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn" style="width: 80px; padding: 10px; margin-left: 10px; background-color: #ff5e00;">Cancel</button>
+        <button type="submit" class="signupbtn"  style="width: 80px; padding: 10px; margin-left: 10px; background-color: #05bbbb;">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+var modal = document.getElementById('id02');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<div class="gallery-image">
+    <div class="img-box">
+      <img src="img/nusadua.JPG" alt="" />
+      <div class="transparent-box">
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="img/tanahlot.jpg" alt="" />
+      <div class="transparent-box">
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="img/tegalalang.jpg" alt="" />
+      <div class="transparent-box">
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="img/uluwatu.jpg" alt="" />
+      <div class="transparent-box">
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="img/monky.JPG" alt="" />
+      <div class="transparent-box">
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="img/kuta.jpg" alt="" />
+      <div class="transparent-box">
+      </div> 
+    </div>
+  </div>
+  <div class="footer" style="text-align: center; color: rgb(211, 211, 211);">
+    <h3 style="margin-top: 5px;">© Copyright 2021</h3><br>
+    <p>Putu Gede Purnayasa</p><BR>
+    <div class="media" align="center">
+      <div class="chip1" style="color: black;">
+        <img src="img/c3.JPG" alt="Person" width="30" height="30">
+        +6289529517481
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
